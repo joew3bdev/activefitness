@@ -1,0 +1,10 @@
+.navbar-wrap{
+    height: 90px;
+    display: flex;
+    align-items: center;
+    padding: 20px 39px;
+    background: #FFFFFF;
+}
+.category-bar{
+    display: flex;
+}

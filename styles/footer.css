@@ -1,0 +1,221 @@
+.footer-wrap {
+  height: 1290px;
+  display: flex;
+  background: #000000;
+  bottom: 0;
+  align-items: center;
+  z-index: 99;
+  padding: 0 39px;
+  color: #ffffff;
+  flex-direction: column;
+}
+
+.footer-wrap div.sep {
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.footer-wrap .support {
+  height: 306px;
+  flex-direction: column;
+  row-gap: 50px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-wrap .support .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-wrap .support .text p {
+  margin-bottom: 0;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.footer-wrap .support .tech {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.footer-wrap .support .tech .circle {
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  border-radius: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-wrap .support .tech div {
+  display: flex;
+  column-gap: 10px;
+}
+
+.footer-wrap .support .tech span {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-wrap .support .tech p {
+  margin-bottom: 0;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+}
+
+.footer-wrap p {
+  margin-bottom: 0;
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 32px;
+}
+
+.footer-wrap .about-wrap {
+  height: 235px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-wrap .about-wrap .about-us {
+  display: flex;
+  flex-direction: column;
+  height: 160px;
+  justify-content: flex-start;
+}
+
+.footer-wrap .about-wrap .about-us p {
+  width: 60px;
+}
+.footer-wrap .about-wrap .terms {
+  width: 126px;
+}
+.footer-wrap .about-wrap .terms p {
+  width: 126px;
+}
+
+.footer-wrap .about-wrap .showroom-wrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  width: 666px;
+  height: 160px;
+}
+
+.footer-wrap .about-wrap .showroom-wrap .detail-wrap {
+  display: flex;
+  row-gap: 30px;
+  justify-content: space-between;
+}
+
+.footer-wrap .about-wrap .showroom-wrap .details {
+  display: flex;
+  flex-direction: column;
+  width: 318px;
+  row-gap: 10px;
+}
+
+.footer-wrap .about-wrap .showroom-wrap .details .direction {
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.footer-wrap .about-wrap .showroom-wrap .details .address {
+  line-height: 19px;
+}
+
+.footer-wrap .about-wrap .showroom-wrap .showrooms {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 11.33px;
+}
+
+.footer-wrap .review-wrap {
+  height: 188px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-wrap .review-wrap .app-sep {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.footer-wrap .review-wrap .app-sep .img-wrap {
+  display: flex;
+  justify-content: space-between;
+  min-width: 273px;
+}
+
+.footer-wrap .review-wrap .app-sep .star-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.footer-wrap strong {
+  font-family: Manrope;
+}
+
+.footer-wrap .distributors {
+  height: 156px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 20px;
+}
+
+.footer-wrap .distributors div {
+  display: flex;
+  justify-content: center;
+  column-gap: 57.78px;
+}
+.footer-wrap .distributors p {
+  font-size: 12px;
+  line-height: 16px;
+  color: #aeaeae;
+}
+
+.footer-wrap .payements {
+  height: 561px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 20px;
+}
+
+.footer-wrap .payements p {
+  font-size: 12px;
+  line-height: 26px;
+  color: #aeaeae;
+}
+
+.footer-wrap .payements .items {
+  width: 1184px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.footer-wrap .payements .img-wrap {
+  display: flex;
+  justify-content: center;
+  column-gap: 5px;
+  margin: 11px 0 100px 0;
+}

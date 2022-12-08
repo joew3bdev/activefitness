@@ -1,0 +1,230 @@
+.product-listing-wrapper {
+  display: flex;
+}
+.product-listing-wrapper.type2 .product-filter {
+  display: none;
+}
+.product-listing-wrapper.type2 .product-listing {
+  width: 100%;
+}
+.product-listing-wrapper.type2 .product-card {
+  width: 25%;
+}
+.product-listing-wrapper.type3 .product-card {
+  width: 100%;
+  display: flex;
+}
+.product-listing-wrapper.type3 .product-card .info {
+  display: flex;
+  width: 100%;
+}
+.product-listing-wrapper.type3 .product-card .info h3 {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+}
+.product-listing-wrapper.type3 .product-card h4 {
+  font-size: 16px;
+}
+.product-listing-wrapper.type3 .product-card .info .about ul {
+  padding-left: 13px;
+  list-style: square;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Manrope";
+}
+.product-listing-wrapper.type3 .product-card .info div.sec {
+  width: 49%;
+  margin-left: 20px;
+}
+.product-listing-wrapper.type3 .product-card .info button {
+  margin-bottom: 13px;
+}
+.product-listing-wrapper.type3 .product-card img {
+  max-width: 20%;
+}
+.product-listing-wrapper.type3 .delivery {
+  margin-top: 51px;
+  margin-bottom: 30px;
+}
+.product-filter {
+  width: 19%;
+  margin-top: 86px;
+  position: sticky;
+  top: 90px;
+  max-height: calc(100vh - 90px);
+  overflow: auto;
+  padding-bottom: 10px;
+}
+.product-listing {
+  width: 80%;
+  padding: 0 38px;
+}
+.product-head {
+  display: flex;
+  margin-top: 86px;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 90px;
+  background-color: #fff;
+  z-index: 99;
+  padding-bottom: 10px;
+}
+.product-head div {
+  display: flex;
+  align-items: center;
+}
+.product-head div:first-child {
+  align-items: flex-end;
+}
+.product-listing .product-head h2 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+  margin: 0;
+  margin-right: 20px;
+}
+.product-listing .product-head label {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #2d2e32;
+}
+.product-card-wrapper {
+  justify-content: space-between;
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.section-type {
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: #c0c3cc;
+  margin-left: 10px;
+}
+.section-type.active {
+  border: 1px solid;
+  color: #000;
+}
+.section-type.vertical {
+  transform: rotate(-90deg);
+}
+.product-filter h4 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+}
+.product-filter .ant-checkbox-wrapper {
+  display: flex;
+  margin-left: 0 !important;
+  margin-bottom: 10px;
+  font-family: "Manrope";
+}
+/* card */
+.product-card {
+  width: calc(33% - 20px);
+  font-family: "Manrope";
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid transparent;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.product-card:hover {
+  border-color: #000;
+}
+.product-card h4 {
+  font-weight: 600;
+  line-height: 19px;
+  color: #2d2e32;
+  margin: 10px 0;
+}
+.product-card img {
+  width: 100%;
+}
+.product-card .pricing {
+  display: flex;
+  align-items: center;
+}
+.product-card .pricing sup {
+  font-size: 12px;
+  line-height: 16px;
+  margin-right: 3px;
+}
+.product-card .pricing label {
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 30px;
+  margin-right: 5px;
+}
+.product-card .pricing del {
+  font-weight: 400;
+  margin-right: 5px;
+}
+.product-card .pricing span {
+  color: #e31d1a;
+}
+.product-card .rate {
+  display: flex;
+  align-items: center;
+}
+.product-card .rate label {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 31px;
+  color: #116da2;
+  margin-left: 5px;
+}
+.product-card .delivery {
+  margin-top: -20px;
+}
+.delivery {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  align-items: center;
+}
+.delivery label {
+  display: flex;
+  background: #0e8eeb;
+  border-radius: 0px 40px 40px 0px;
+  align-items: center;
+  height: 22px;
+  padding: 0px 10px;
+  justify-content: center;
+  margin-left: -4px;
+}
+.delivery span {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6c944;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  width: 29px;
+  height: 29px;
+  z-index: 9;
+}
+.delivery.express label {
+  background: #02bc8f;
+}

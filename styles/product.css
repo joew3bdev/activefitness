@@ -1,0 +1,42 @@
+.product-wrapper {
+  display: flex;
+  flex: 1;
+  padding: 0 40px;
+  margin-top: 30px;
+}
+.image-section,
+.details-section {
+  width: 50%;
+  display: flex;
+}
+.image-display {
+  width: 60px;
+}
+.image-display div {
+  background-color: #f0f2f5;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.image-display img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.carousel-section {
+  width: 90%;
+  background-color: #f0f2f5;
+  padding: 20px;
+  margin-left: 10px;
+}
+.carousel-section img {
+  max-height: 70vh;
+  max-width: 100%;
+  width: auto !important;
+  margin: 0 auto;
+  display: block !important;
+}
