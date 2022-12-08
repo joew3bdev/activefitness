@@ -58,3 +58,155 @@
   max-width: 600px;
   margin-bottom: 50px;
 }
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  row-gap: 55px;
+}
+
+.testimonial p {
+  margin-bottom: 0px;
+}
+.testimonial .message {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 668px;
+}
+
+.testimonial .user {
+  display: flex;
+  column-gap: 20px;
+}
+
+.testimonial .details {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial .details strong {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+}
+
+.testimonial .details .location {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+
+  margin: 2px 0 11px 0;
+}
+
+.testimonial .details .location .star-wrap {
+  display: flex;
+}
+
+.blog-section {
+  display: flex;
+  row-gap: 30px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.block img {
+  width: 318px;
+  height: 160px;
+}
+
+.block .blockName {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+
+  letter-spacing: 0.1em;
+
+  color: #505050;
+}
+
+.block .details {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #2d2e32;
+}
+
+.category {
+  display: flex;
+  column-gap: 30px;
+  justify-content: center;
+  width: 100%;
+}
+
+.category-card {
+  width: 434px;
+  height: 214px;
+  display: flex;
+  background: #ffffff;
+  border: 1px solid #d5d5d5;
+}
+
+.category-card .image {
+  margin: 20px 20px 44px 20px;
+  width: 150px;
+  height: 150px;
+}
+
+.category-card .card-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.category-card .card-details .title {
+  margin-bottom: 20px;
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.category-card .card-details .detail {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  margin-top: 10px;
+  color: #000000;
+}

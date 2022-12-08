@@ -4,6 +4,8 @@ import Layout from "../components/common/Layout";
 import TabCarousel from "../components/common/TabCarousel";
 import { Button, Col } from "antd";
 import { Row } from "antd";
+import UserStar from "../components/library/icons/Star";
+import Image from "next/image";
 export default function Home() {
   const indexJson = {
     components: [
@@ -452,12 +454,12 @@ export default function Home() {
           {
             grid: 4,
             title: "Cardio",
+            image:
+              "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
             children: [
               {
                 title: "Cardio",
                 url: "https://website.com/cardio",
-                image:
-                  "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
               },
               {
                 title: "Strength",
@@ -525,46 +527,55 @@ export default function Home() {
       },
       {
         type: "testimonial",
+        title: "What’s our Customers saying?",
         content: [
           {
             name: "Giannis Kollias",
+            location: "Location, Gym name",
+            src: "/images/user.png",
             image:
               "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
             "star-rating": "4.5",
             message:
               "Veniam dolore do et eu. Sint enim consectetur sunt aute velit aute duis duis duis nisi ullamco consectetur Lorem. Lorem labore dolor sunt mollit occaecat minim fugiat incididunt elit cillum irure enim. Deserunt aute commodo magna eiusmod anim aute velit consectetur sunt. Deserunt proident amet sunt aliqua eu dolor pariatur nulla eiusmod velit ad. Ea irure consectetur ex qui esse irure cupidatat fugiat esse esse anim do Lorem.",
           },
-          {
-            name: "Giannis Kollias",
-            image:
-              "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
-            "star-rating": "4.5",
-            message:
-              "Veniam dolore do et eu. Sint enim consectetur sunt aute velit aute duis duis duis nisi ullamco consectetur Lorem. Lorem labore dolor sunt mollit occaecat minim fugiat incididunt elit cillum irure enim. Deserunt aute commodo magna eiusmod anim aute velit consectetur sunt. Deserunt proident amet sunt aliqua eu dolor pariatur nulla eiusmod velit ad. Ea irure consectetur ex qui esse irure cupidatat fugiat esse esse anim do Lorem.",
-          },
-          {
-            name: "Giannis Kollias",
-            image:
-              "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
-            "star-rating": "4.5",
-            message:
-              "Veniam dolore do et eu. Sint enim consectetur sunt aute velit aute duis duis duis nisi ullamco consectetur Lorem. Lorem labore dolor sunt mollit occaecat minim fugiat incididunt elit cillum irure enim. Deserunt aute commodo magna eiusmod anim aute velit consectetur sunt. Deserunt proident amet sunt aliqua eu dolor pariatur nulla eiusmod velit ad. Ea irure consectetur ex qui esse irure cupidatat fugiat esse esse anim do Lorem.",
-          },
-          {
-            name: "Giannis Kollias",
-            image:
-              "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
-            "star-rating": "4.5",
-            message:
-              "Veniam dolore do et eu. Sint enim consectetur sunt aute velit aute duis duis duis nisi ullamco consectetur Lorem. Lorem labore dolor sunt mollit occaecat minim fugiat incididunt elit cillum irure enim. Deserunt aute commodo magna eiusmod anim aute velit consectetur sunt. Deserunt proident amet sunt aliqua eu dolor pariatur nulla eiusmod velit ad. Ea irure consectetur ex qui esse irure cupidatat fugiat esse esse anim do Lorem.",
-          },
+          // {
+          //   name: "Giannis Kollias",
+          //   location: "Location, Gym name",
+          //   src: "/images/user.png",
+          //   image:
+          //     "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
+          //   "star-rating": "4.5",
+          //   message:
+          //     "Veniam dolore do et eu. Sint enim consectetur sunt aute velit aute duis duis duis nisi ullamco consectetur Lorem. Lorem labore dolor sunt mollit occaecat minim fugiat incididunt elit cillum irure enim. Deserunt aute commodo magna eiusmod anim aute velit consectetur sunt. Deserunt proident amet sunt aliqua eu dolor pariatur nulla eiusmod velit ad. Ea irure consectetur ex qui esse irure cupidatat fugiat esse esse anim do Lorem.",
+          // },
+          // {
+          //   name: "Giannis Kollias",
+          //   location: "Location, Gym name",
+          //   src: "/images/user.png",
+          //   image:
+          //     "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
+          //   "star-rating": "4.5",
+          //   message:
+          //     "Veniam dolore do et eu. Sint enim consectetur sunt aute velit aute duis duis duis nisi ullamco consectetur Lorem. Lorem labore dolor sunt mollit occaecat minim fugiat incididunt elit cillum irure enim. Deserunt aute commodo magna eiusmod anim aute velit consectetur sunt. Deserunt proident amet sunt aliqua eu dolor pariatur nulla eiusmod velit ad. Ea irure consectetur ex qui esse irure cupidatat fugiat esse esse anim do Lorem.",
+          // },
+          // {
+          //   name: "Giannis Kollias",
+          //   src: "/images/user.png",
+          //   image:
+          //     "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
+          //   "star-rating": "4.5",
+          //   message:
+          //     "Veniam dolore do et eu. Sint enim consectetur sunt aute velit aute duis duis duis nisi ullamco consectetur Lorem. Lorem labore dolor sunt mollit occaecat minim fugiat incididunt elit cillum irure enim. Deserunt aute commodo magna eiusmod anim aute velit consectetur sunt. Deserunt proident amet sunt aliqua eu dolor pariatur nulla eiusmod velit ad. Ea irure consectetur ex qui esse irure cupidatat fugiat esse esse anim do Lorem.",
+          // },
         ],
       },
       {
         type: "blog-section",
+        title: "Content block section",
         content: [
           {
-            grid: 4,
+            grid: 3,
             image:
               "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
             title: "Exceed your limit. Stay in shape. Have Fun",
@@ -573,7 +584,7 @@ export default function Home() {
             category: "Fitness",
           },
           {
-            grid: 4,
+            grid: 3,
             image:
               "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
             title: "Exceed your limit. Stay in shape. Have Fun",
@@ -582,7 +593,7 @@ export default function Home() {
             category: "Fitness",
           },
           {
-            grid: 4,
+            grid: 3,
             image:
               "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
             title: "Exceed your limit. Stay in shape. Have Fun",
@@ -591,7 +602,7 @@ export default function Home() {
             category: "Fitness",
           },
           {
-            grid: 4,
+            grid: 3,
             image:
               "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
             title: "Exceed your limit. Stay in shape. Have Fun",
@@ -603,6 +614,7 @@ export default function Home() {
       },
     ],
   };
+
   const renderComp = (data) => {
     const structrue = (content) => {
       return (
@@ -688,7 +700,6 @@ export default function Home() {
             <Col span={main.grid * 2}>
               <Carousel slidesToShow={1} slidesToScroll={1}>
                 {main.children.map((item) => {
-                  debugger;
                   return (
                     <div className="carousel">
                       <div className="content">
@@ -733,6 +744,81 @@ export default function Home() {
             </Col>
           );
         })
+      );
+    } else if (data.type == "testimonial") {
+      return structrue(
+        // <Carousel slidesToShow={1} slidesToScroll={1}>
+        data.content.map((item) => {
+          return (
+            <div className="testimonial">
+              <div>
+                <p className="message">{item.message}</p>
+              </div>
+              <div className="user">
+                <div>
+                  <Image src={item.src} width={72} height={72} />
+                </div>
+                <div className="details">
+                  <strong>{item["name"]}</strong>
+                  <p>{item["location"]}</p>
+                  <div className="star-wrap">
+                    {Array(Math.round(Number(item["star-rating"]))).fill(
+                      <UserStar />
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })
+        // </Carousel>
+      );
+    } else if (data.type == "blog-section") {
+      return structrue(
+        <Row gutter={20}>
+          {data.content.map((item) => {
+            return (
+              <Col span={item.grid * 2} className="block">
+                <img src={item.image} />
+                <p className="blockName">{item.category}</p>
+                <p className="details">{item.title}</p>
+              </Col>
+            );
+          })}
+        </Row>
+        // <dev className="blog-section">
+        //   {data.content.map((item) => {
+        //     return (
+        //       <div className="block">
+        //         <img src={item.image} />
+        //         <p className="blockName">{item.category}</p>
+        //         <p className="details">{item.title}</p>
+        //       </div>
+        //     );
+        //   })}
+        // </dev>
+      );
+    } else if (data.type == "category-card") {
+      return structrue(
+        <div className="category">
+          {data.content.map((item) => {
+            return (
+              <div className="category-card">
+                <img className="image" src={item.image} />
+                <div className="card-details">
+                  <p className="title">{item.title}</p>
+                  {item.children.map((child) => {
+                    return (
+                      <a href={child.url} className="detail">
+                        {child.title}
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
       );
     }
   };
