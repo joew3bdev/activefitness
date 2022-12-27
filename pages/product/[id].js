@@ -6,13 +6,14 @@ import Carousel from "../../components/common/Carousel";
 import { Button } from "antd";
 
 function Product(props) {
-  const productDetails = props?.lisitng?.data?.[0];
+  const productDetails = props?.lisitng?.data;
   const [initialSlide, setinitialSlide] = useState(0);
   let sliderRef = useRef(null);
   const sliderRefup = (refData) => {
     sliderRef = refData;
   };
   console.log(props);
+  debugger;
   return (
     <Layout>
       <SeoHead />
@@ -58,13 +59,13 @@ function Product(props) {
 }
 Product.getInitialProps = async (ctx) => {
   const datafor = {
-    product_id: ctx.query.id,
-    country_id: 2,
-    language_id: 2,
-    channel: "app",
+    product_slug: "asics-as003-1173a006-bs/1173A006-400-44",
+    country_id: 1,
+    language_id: 1,
+    channel: "desktop",
   };
   const res = await callApi({
-    URL: "https://api.afsdev.in/product/detail",
+    URL: "http://reactapi.activefitnessstore.com/api/product/detail",
     TYPE: "POST",
     DATA: datafor,
   });

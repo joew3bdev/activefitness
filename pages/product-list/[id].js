@@ -107,7 +107,7 @@ List.getInitialProps = async (ctx) => {
   const datafor = {
     country_id: 2,
     language_id: 1,
-    channel: "app",
+    channel: "desktop",
     argument_1: "category",
     argument_2: "3",
     argument_3: "",
@@ -126,7 +126,7 @@ List.getInitialProps = async (ctx) => {
     },
   };
   const res = await callApi({
-    URL: "https://api.afsdev.in/product/listing",
+    URL: "http://reactapi.activefitnessstore.com/api/product/listing",
     TYPE: "POST",
     DATA: datafor,
   });

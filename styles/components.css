@@ -60,7 +60,7 @@
 }
 
 .testimonial {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -209,4 +209,7 @@
   line-height: 19px;
   margin-top: 10px;
   color: #000000;
+}
+.ant-row {
+  margin: 20px 0;
 }

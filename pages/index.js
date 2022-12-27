@@ -44,7 +44,7 @@ export default function Home() {
           {
             url: "https://website.com",
             image:
-              "https://res.cloudinary.com/afs-assets/image/upload/v1668834707/html-banners/black-friday22-listingpage-uae-ksa-web-eng.jpg",
+              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARsAAACyCAMAAABFl5uBAAAAIVBMVEUAAAAZGRkVFRUNDQ0REREYGBgGBgYLCwsTExMICAgbGxslgkk6AAABy0lEQVR4nO3Z3W6CMBiA4RWhau//gmcUxo98CdMtS/Y9zyGWg76BVuDjAwAAAAAAAAAAAAAAAAAAADju3L3n9NcT+EWnVt7R+r+ewC/SJqZNTJvYo81Ly3CONq2+cmrTJqRNTJuYNjFtYtrEtImla1P7y+V67NRsba6tlXZwwtnajE9J572h2xsvWZvpybPbGzpsiiVr049tht2Rm2LJ2kzXzeV5YL0tROsjydpM683OTjU8hcjWpt52qdZ2XpDfx61vtWxtbgf6fuefYG3P+1e+Nsvf5sPdzv6Vuk0p2zV6NTBzm0ub4tTphfsqReI213uQ+y/D/GFhMSBxmzFIXX2nWa7GedtMf5FLrXOa1Wqcr033mO0cZOgWaZZD07Wp4xuKVZBlmzlGujbdY77n+FPw19Bsbeo44bBMmR8osrV53EptiNvMq3GyNjW+leYLZxqcrE20Aq/aTDlytTly2ZSv1ThXmyOXzbwap2pzbceMr7hStfkmbWLaxLSJaRNL0qY/vSBHm3Jw814rOdq8TBtttNnQJqZNTJuYNjFtYtrEtIlpE9Mmpk1Mm5g2MW1i2sROZXhH+c9tAAAAAAAAAAAAAAAAAAAA4Od9AiosG7xaKcMBAAAAAElFTkSuQmCC",
           },
           {
             title: "Exceed your limits. Stay in shape. Have fun.",
@@ -375,7 +375,7 @@ export default function Home() {
             "title-color": "white",
             "bg-color": "black",
             image:
-              "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
+              "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/hds-new-arrival-treadmill.png",
             children: [
               {
                 title: "Cardio",
@@ -455,7 +455,7 @@ export default function Home() {
             grid: 4,
             title: "Cardio",
             image:
-              "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
+              "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/hds-new-arrival-treadmill.png",
             children: [
               {
                 title: "Cardio",
@@ -479,7 +479,7 @@ export default function Home() {
             grid: 4,
             title: "Strength",
             image:
-              "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
+              "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/hds-new-arrival-sbike.png",
             children: [
               {
                 title: "Cardio",
@@ -503,7 +503,7 @@ export default function Home() {
             grid: 4,
             title: "Weight",
             image:
-              "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg",
+              "https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/hds-new-arrival-hgym.png",
             children: [
               {
                 title: "Cardio",
@@ -747,31 +747,29 @@ export default function Home() {
       );
     } else if (data.type == "testimonial") {
       return structrue(
-        // <Carousel slidesToShow={1} slidesToScroll={1}>
-        data.content.map((item) => {
-          return (
-            <div className="testimonial">
-              <div>
+        <Carousel slidesToShow={1} slidesToScroll={1}>
+          {data.content.map((item) => {
+            return (
+              <div className="testimonial">
                 <p className="message">{item.message}</p>
-              </div>
-              <div className="user">
-                <div>
-                  <Image src={item.src} width={72} height={72} />
-                </div>
-                <div className="details">
-                  <strong>{item["name"]}</strong>
-                  <p>{item["location"]}</p>
-                  <div className="star-wrap">
-                    {Array(Math.round(Number(item["star-rating"]))).fill(
-                      <UserStar />
-                    )}
+                <div className="user">
+                  <div>
+                    <Image src={item.src} width={72} height={72} />
+                  </div>
+                  <div className="details">
+                    <strong>{item["name"]}</strong>
+                    <p>{item["location"]}</p>
+                    <div className="star-wrap">
+                      {Array(Math.round(Number(item["star-rating"]))).fill(
+                        <UserStar />
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })
-        // </Carousel>
+            );
+          })}
+        </Carousel>
       );
     } else if (data.type == "blog-section") {
       return structrue(
