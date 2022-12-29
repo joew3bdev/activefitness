@@ -8,7 +8,6 @@ import ProductCard from "../components/common/ProductCard";
 const { Panel } = Collapse;
 
 function List(props) {
-  debugger;
   const [gridType, setgridType] = useState(1);
   return (
     <Layout>

@@ -3,11 +3,177 @@
   flex: 1;
   padding: 0 40px;
   margin-top: 30px;
+  border-bottom: 1px solid #dfdfdf;
 }
 .image-section,
 .details-section {
   width: 50%;
   display: flex;
+  flex-direction: column;
+}
+.details-section .title {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  margin-bottom: 0;
+}
+
+.details-section .star-wrap {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.details-section .star-wrap svg {
+  height: 16px;
+  width: 16px;
+}
+
+.price-wrap {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #dfdfdf;
+  margin-bottom: 10px;
+  margin-top: 31px;
+}
+.price-wrap .price {
+  display: flex;
+  align-items: baseline;
+  column-gap: 5px;
+}
+.price-wrap .price .org {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 36px;
+
+  color: #000000;
+}
+.price-wrap .price .saves {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: flex-end;
+  color: #e31d1a;
+}
+.price-wrap .price .disc {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: flex-end;
+  text-decoration-line: line-through;
+  color: #000000;
+}
+.price-wrap span {
+  margin: 5px 0 10px 0px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #505050;
+}
+
+.offer-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.offer-wrap .offer-text {
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+}
+.offer-wrap .offer-text p {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+
+.offer-wrap .express {
+  margin: 51px 0 30px 0;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.offer-wrap .express .bus {
+  width: 69px;
+  height: 20px;
+  background: linear-gradient(270deg, #ff6f6f 5.8%, #ffd84e 95.65%);
+  display: flex;
+  column-gap: 5px;
+}
+.offer-wrap .express p {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.bus-title {
+  font-family: "Barlow Condensed";
+  font-style: italic;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  color: #583939;
+}
+.offer-wrap .offer {
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-wrap .stock-num {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #e31d1a;
+}
+
+.details-section p {
+  margin-bottom: 0;
+}
+.offer-wrap .offer-text a {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-decoration-line: underline;
+  color: #000000;
+}
+.details-section h5 {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  align-items: center;
+  color: #000000;
+  margin-bottom: 0;
 }
 .image-display {
   width: 60px;
@@ -39,4 +205,304 @@
   width: auto !important;
   margin: 0 auto;
   display: block !important;
+}
+
+.buy-wrap {
+  display: flex;
+  column-gap: 10px;
+  margin-bottom: 33px;
+}
+
+.buy-wrap .ant-btn {
+  max-width: 270px;
+}
+
+.useful-wrap {
+  display: flex;
+  margin-bottom: 31px;
+  column-gap: 51.2px;
+}
+
+.useful-wrap strong {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.useful-wrap div {
+  display: flex;
+  column-gap: 11.5px;
+}
+
+.about-item {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.about {
+  margin: 10px 0;
+}
+
+.spec-container {
+  display: flex;
+  flex: 1;
+  padding: 0 40px;
+  margin-top: 50px;
+  border-bottom: 1px solid #000000;;
+}
+
+.spec-container .ant-tabs-tab {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.spec-container .ant-tabs-tab .ant-tabs-tab-active {
+  border-color: #e31d1a;
+}
+.spec-container .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #e31d1a;
+}
+
+.tab-children {
+  padding: 100px 155px;
+}
+
+.tab-children .pdtDetails {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.tab-children .specifications {
+  width: 782px;
+  height: 40px;
+  display: flex;
+}
+
+.tab-children p {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.tab-children .specifications p {
+  width: 50%;
+}
+
+.tab-children .specifications strong {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.tab-children .service,
+.tab-children .delivery-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 782px;
+}
+
+.tab-children .service ul,
+.tab-children .delivery-wrap ul {
+  list-style: square inside;
+  padding-left: 0;
+}
+.tab-children li {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tab-children .return-info {
+  display: flex;
+  flex-direction: column;
+  width: 1014px;
+  height: 89px;
+  background: #f0f2f5;
+  margin-top: 47px;
+  padding: 20px;
+}
+
+.tab-children .return-info strong {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.tab-children .return-info p {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.pdt-reviews {
+  display: flex;
+}
+
+.learn-more {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration-line: underline;
+  margin-left: 40px;
+  margin-bottom: 30px;
+}
+
+.sales-service-wrap {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #dfdfdf;
+  border-top: 1px solid #dfdfdf;
+  height: 76px;
+  align-items: center;
+}
+
+.sales-service-wrap .sales-service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sales-service-wrap .sales-service span {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000000;
+}
+
+.store-visit-wrap {
+  display: flex;
+  border-bottom: 1px solid #dfdfdf;
+  height: 100px;
+  column-gap: 13px;
+  align-items: center;
+}
+
+.store-visit-wrap .try-buy {
+  display: flex;
+  flex-direction: column;
+}
+
+.store-visit-wrap .try-buy .title {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.store-visit-wrap .try-buy .desc {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.brands-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.brands-wrap .brands {
+  display: flex;
+  column-gap: 30px;
+  align-items: center;
+}
+.brands-wrap .brands .brand-item {
+  display: flex;
+  flex-direction: column;
+}
+.brands-wrap .brands .brand-item .item {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #505050;
+}
+.brands-wrap .brands .brand-item .title {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+
+.brands-wrap a {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  text-decoration-line: underline;
+  color: #000000;
+}
+
+.request-buttons {
+  display: flex;
+  column-gap: 10px;
+  margin-bottom: 100px;
+  margin-top: 20px;
+}
+.request-buttons .req-btn {
+  background: #f0f2f5;
+}
+
+.request-buttons .ant-btn > span {
+  color: #000000;
+}
+.request-buttons .ant-btn {
+  max-width: 270px;
+}
+
+.request-buttons .ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background: currentColor;
 }
