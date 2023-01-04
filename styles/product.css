@@ -5,11 +5,26 @@
   margin-top: 30px;
   border-bottom: 1px solid #dfdfdf;
 }
+
+@media only screen and (max-width: 480px) {
+  .product-wrapper {
+    flex-direction: column;
+    padding: 0 15px;
+  }
+}
+
 .image-section,
 .details-section {
   width: 50%;
   display: flex;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 480px) {
+  .image-section,
+  .details-section {
+    width: 100%;
+  }
 }
 .details-section .title {
   font-family: "Barlow Condensed";
@@ -33,7 +48,6 @@
 .price-wrap {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #dfdfdf;
   margin-bottom: 10px;
   margin-top: 31px;
 }
@@ -84,11 +98,22 @@
   color: #505050;
 }
 
+@media only screen and (max-width: 480px) {
+  .price-wrap span {
+    width: 212px;
+  }
+
+  .price-wrap span a {
+    color: #000000;
+  }
+}
+
 .offer-wrap {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
 }
+
 .offer-wrap .offer-text {
   display: flex;
   column-gap: 5px;
@@ -100,9 +125,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
-  display: flex;
-  align-items: center;
-
+  display: inline;
   color: #000000;
 }
 
@@ -139,7 +162,8 @@
 }
 .offer-wrap .offer {
   display: flex;
-  flex-direction: column;
+  align-items: baseline;
+  column-gap: 6px;
 }
 
 .offer-wrap .stock-num {
@@ -160,10 +184,9 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
-  display: flex;
-  align-items: center;
   text-decoration-line: underline;
-  color: #000000;
+  color: #116DA2;
+  margin-left: 5px;
 }
 .details-section h5 {
   font-family: "Manrope";
@@ -177,6 +200,11 @@
 }
 .image-display {
   width: 60px;
+}
+@media only screen and (max-width: 480px) {
+  .image-display {
+    display: none;
+  }
 }
 .image-display div {
   background-color: #f0f2f5;
@@ -199,12 +227,29 @@
   padding: 20px;
   margin-left: 10px;
 }
+
+@media only screen and (max-width: 480px) {
+  .carousel-section {
+    width: 100%;
+    background-color: #f0f2f5;
+    padding: 0px;
+    margin-left: 0px;
+  }
+}
 .carousel-section img {
   max-height: 70vh;
   max-width: 100%;
   width: auto !important;
   margin: 0 auto;
   display: block !important;
+}
+
+@media only screen and (max-width: 480px) {
+  .carousel-section img {
+    width: 100%;
+    max-width: 390px;
+    height: 390px;
+  }
 }
 
 .buy-wrap {
@@ -215,6 +260,16 @@
 
 .buy-wrap .ant-btn {
   max-width: 270px;
+}
+
+@media only screen and (max-width: 480px) {
+  .buy-wrap {
+    flex-direction: column;
+    row-gap: 5px;
+  }
+  .buy-wrap .ant-btn {
+    max-width: none;
+  }
 }
 
 .useful-wrap {
@@ -261,7 +316,7 @@
   flex: 1;
   padding: 0 40px;
   margin-top: 50px;
-  border-bottom: 1px solid #000000;;
+  border-bottom: 1px solid #000000;
 }
 
 .spec-container .ant-tabs-tab {
@@ -270,6 +325,18 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
+}
+
+@media only screen and (max-width: 480px) {
+  .spec-container {
+    padding: 0 15px;
+  }
+  .spec-container .ant-tabs {
+    width: 100%;
+  }
+  .tab-children {
+    padding: 0;
+  }
 }
 
 .spec-container .ant-tabs-tab .ant-tabs-tab-active {
@@ -294,7 +361,6 @@
 
 .tab-children .specifications {
   width: 782px;
-  height: 40px;
   display: flex;
 }
 
@@ -308,6 +374,7 @@
 
 .tab-children .specifications p {
   width: 50%;
+  margin-bottom: 0;
 }
 
 .tab-children .specifications strong {
@@ -327,7 +394,7 @@
 
 .tab-children .service ul,
 .tab-children .delivery-wrap ul {
-  list-style: square inside;
+  list-style: square;
   padding-left: 0;
 }
 .tab-children li {
@@ -336,6 +403,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  margin-left: 20px;
 }
 
 .tab-children .return-info {
@@ -364,6 +432,25 @@
   font-size: 16px;
   line-height: 22px;
   color: #000000;
+}
+
+@media only screen and (max-width: 480px) {
+  .tab-children {
+    padding: 0;
+  }
+  .tab-children .specifications {
+    border-bottom: 1px solid #dfdfdf;
+    width: inherit;
+  }
+  .tab-children .service,
+  .tab-children .delivery-wrap {
+    width: inherit;
+  }
+
+  .tab-children .return-info {
+    width: auto;
+    margin-bottom: 50px;
+  }
 }
 
 .pdt-reviews {
@@ -408,9 +495,9 @@
 .store-visit-wrap {
   display: flex;
   border-bottom: 1px solid #dfdfdf;
-  height: 100px;
+  padding: 10px 0 20px;
   column-gap: 13px;
-  align-items: center;
+  align-items: baseline;
 }
 
 .store-visit-wrap .try-buy {
@@ -442,8 +529,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
   border-bottom: 1px solid #dfdfdf;
+  padding: 20px 0;
 }
 
 .brands-wrap .brands {
@@ -455,6 +542,11 @@
   display: flex;
   flex-direction: column;
 }
+
+.brands-wrap .brands .brand-item-wrap {
+  display: flex;
+  column-gap: 30px;
+}
 .brands-wrap .brands .brand-item .item {
   font-family: "Barlow Condensed";
   font-style: normal;
@@ -465,6 +557,20 @@
   text-transform: uppercase;
   color: #505050;
 }
+
+@media only screen and (max-width: 480px) {
+  .brands-wrap .brands .brand-item-wrap {
+    flex-direction: column;
+  }
+  .brands-wrap .brands .brand-item {
+    flex-direction: row;
+    align-items: center;
+  }
+  .brands-wrap .brands .brand-item .item {
+    margin-right: 10px;
+  }
+}
+
 .brands-wrap .brands .brand-item .title {
   font-family: "Manrope";
   font-style: normal;
@@ -505,4 +611,15 @@
 .request-buttons .ant-btn-primary:hover,
 .ant-btn-primary:focus {
   background: currentColor;
+}
+
+@media only screen and (max-width: 480px) {
+  .request-buttons {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .request-buttons .ant-btn {
+    max-width: inherit;
+  }
 }

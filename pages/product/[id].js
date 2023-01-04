@@ -14,10 +14,13 @@ import ShareIcon from "../../components/library/icons/ShareIcon";
 import TruckIcon from "../../components/library/icons/TruckIcon";
 import ReplayIcon from "../../components/library/icons/Replay";
 import SettingsIcon from "../../components/library/icons/SettingsIcon";
+import useViewport from "../../helpers/useViewport";
 
 function Product(props) {
   const productDetails = props?.lisitng?.data;
   const [initialSlide, setinitialSlide] = useState(0);
+  const { width } = useViewport();
+  const mobile = width < 481;
   let sliderRef = useRef(null);
   const sliderRefup = (refData) => {
     sliderRef = refData;
@@ -100,14 +103,23 @@ function Product(props) {
               <p className="disc">AED 75</p>
               <p className="saves">Save 30%</p>
             </div>
-            <span>Inclusive of VAT</span>
+            {mobile ? (
+              <span>
+                Includes Free delivery and Installation. Earn 100 Fit Coins
+                onthis Purchase (?)
+              </span>
+            ) : (
+              <span>Inclusive of VAT</span>
+            )}
           </div>
           <div className="offer-wrap">
             <div className="offer">
+              <LabelIcon />{" "}
               <span className="offer-text">
-                <LabelIcon />{" "}
-                <p>3 interest-free payments of AED 406.00 with </p>{" "}
-                <img src={""} /> <a>learn more</a>
+                <p>
+                  3 interest-free payments of AED 406.00 with <img src={""} />
+                  <a> learn more</a>
+                </p>
               </span>
             </div>
             <div className="express">
@@ -167,11 +179,17 @@ function Product(props) {
           </div>
           <div className="brands-wrap">
             <div className="brands">
-            <Image src="/images/Pro-form.png" width={100} height={60} />
-            <div className="brand-item">
-              <p className="item">Brand</p>
-              <p className="title">Pro-Form</p>
-            </div>
+              <Image src="/images/Pro-form.png" width={100} height={60} />
+              <div className="brand-item-wrap">
+                <div className="brand-item">
+                  <p className="item">Brand</p>
+                  <p className="title">Pro-Form</p>
+                </div>
+                <div className="brand-item">
+                  <p className="item">Origin</p>
+                  <p className="title">USA</p>
+                </div>
+              </div>
             </div>
             <a>visit Store</a>
           </div>
