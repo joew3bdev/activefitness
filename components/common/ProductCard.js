@@ -5,11 +5,11 @@ function ProductCard({ item }, gridType, save) {
   return (
     <Link href={`/product/${item._id}`}>
       <div className="product-card">
-        <img src={item.image_url} />
+        <img src={item.image} />
         {gridType === 3 ? (
           <div className="info">
             <div className="sec">
-              <h4>{item.name}</h4>
+              <h4>{item.product_name}</h4>
               <div className="rate">
                 <Rate allowHalf defaultValue={2.5} />
                 <label>246 reviews</label>
@@ -29,7 +29,7 @@ function ProductCard({ item }, gridType, save) {
                 <del>
                   {item.currency} {item.regular_price}
                 </del>
-                <span>Save {save}</span>
+                <span>{item.discount.discount_text}</span>
               </div>
               <div className="delivery">
                 <span>
@@ -51,16 +51,16 @@ function ProductCard({ item }, gridType, save) {
               <span>
                 <TruckIcon />
               </span>
-              <label>{item.delivery_days_real} days</label>
+              <label>{item.delivery.delivery_type}</label>
             </div>
-            <h4>{item.name}</h4>
+            <h4>{item.product_name}</h4>
             <div className="pricing">
               <sup>{item.currency}</sup>
               <label>{item.sale_price}</label>
               <del>
                 {item.currency} {item.regular_price}
               </del>
-              <span>Save {save}%</span>
+              <span>{item.discount.discount_text}</span>
             </div>
             <div className="rate">
               <Rate allowHalf defaultValue={2.5} />

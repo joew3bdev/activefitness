@@ -1,10 +1,10 @@
-import Carousel from "../components/common/Carousel";
-import SeoHead from "../components/common/Head";
-import Layout from "../components/common/Layout";
+import Carousel from "../../components/common/Carousel";
+import SeoHead from "../../components/common/Head";
+import Layout from "../../components/common/Layout";
 import { Select, Collapse, Checkbox } from "antd";
 import { useState } from "react";
-import { callApi } from "../helpers/helpers";
-import ProductCard from "../components/common/ProductCard";
+import { callApi } from "../../helpers/helpers";
+import ProductCard from "../../components/common/ProductCard";
 const { Panel } = Collapse;
 
 function List(props) {
@@ -40,7 +40,7 @@ function List(props) {
           <div className="product-head">
             <div>
               <h2>{props?.lisitng?.title}</h2>
-              <label>70 Results</label>
+              <label>{props?.lisitng?.total_count} Results</label>
             </div>
             <div>
               <Select
@@ -105,24 +105,23 @@ function List(props) {
 }
 List.getInitialProps = async (ctx) => {
   const datafor = {
-    country_id: 2,
+    country_id: 1,
     language_id: 1,
     channel: "desktop",
-    argument_1: "category",
-    argument_2: "3",
-    argument_3: "",
-    pagination: 0,
-    sorting: "h2l",
+    slug: "bike",
+    type: "category/subcategoriy/brands/product/dynamic",
+    pagination: 1,
+    sorting: "recommended",
+    rating: "5 Star",
     tags: [],
     filters: {
-      brands: [],
-      categories: [],
-      collections: [],
-      colors: [],
-      sizes: [],
-      prices: [],
-      Screen: [],
-      Size: [],
+      brands: null,
+      categories: null,
+      delivery_days: [],
+      prices: {
+        min: 0,
+        max: 0,
+      },
     },
   };
   const res = await callApi({
