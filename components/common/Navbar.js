@@ -459,7 +459,6 @@ function Navbar(props) {
         </ul>
       );
     } else if (type == "horizontal-image-tile") {
-      debugger;
       return (
         <ul className="horizontal-image-tile">
           {data["content-block"].map((item) => {
