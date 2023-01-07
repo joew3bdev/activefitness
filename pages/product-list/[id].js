@@ -107,7 +107,7 @@ List.getInitialProps = async (ctx) => {
     country_id: 1,
     language_id: 1,
     channel: "desktop",
-    slug: "bike",
+    slug: ctx.query.id,
     type: "category/subcategoriy/brands/product/dynamic",
     pagination: 1,
     sorting: "recommended",

@@ -66,7 +66,6 @@ function Product(props) {
       ),
     },
   ];
-  console.log(productDetails);
   return (
     <Layout>
       <SeoHead />
@@ -211,7 +210,7 @@ function Product(props) {
 }
 Product.getInitialProps = async (ctx) => {
   const datafor = {
-    product_slug: "asics-as003-1173a006-bs/1173A006-400-44",
+    product_slug: ctx.query.id,
     country_id: 1,
     language_id: 1,
     channel: "desktop",
