@@ -1,12 +1,10 @@
 import axios from "axios";
 export const callApi = async ({ URL, TYPE, DATA }) => {
-  console.log(URL, "url");
-  console.log(TYPE, "method");
-  console.log(DATA, "DATA");
   const res = await axios({
     method: TYPE,
     url: URL,
     headers: {
+      "Accept-Encoding": "application/json",
       "Content-Type": "application/json",
       "client-name": "activefitness",
       "client-token":
@@ -14,6 +12,5 @@ export const callApi = async ({ URL, TYPE, DATA }) => {
     },
     data: DATA,
   });
-  console.log(res, "response");
   return { data: res?.data };
 };
