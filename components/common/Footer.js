@@ -110,7 +110,7 @@ function Footer(props) {
           <strong>Connect with us</strong>
           <Image src="/images/socialmedia.png" width={284} height={33} />
         </div>
-        <div className="app-sep">
+        <div className="app-sep-mobile">
           <strong>Google Reviews</strong>
           <div className="star-wrap">
             <Star />
@@ -121,7 +121,7 @@ function Footer(props) {
             <p>4.3</p>
           </div>
         </div>
-        <div className="app-sep">
+        <div className="app-sep-mobile">
           <strong>Send Me Best Offers & Deals</strong>
           <div>
             <Input.Group compact>
@@ -174,7 +174,7 @@ function Footer(props) {
           Clothing &nbsp; Women Sportswear &nbsp; Sports Shoe for Men &nbsp;
           Sports Shoes for Women
         </p>
-        <p>Accepted Payment Methods</p>
+        <p className="mobile">Accepted Payment Methods</p>
         <div className="img-wrap">
           <Image src="/images/postpay.png" width={55.38} height={30} />
           <Image src="/images/visa.png" width={55.38} height={30} />
@@ -182,7 +182,7 @@ function Footer(props) {
           <Image src="/images/cs10.png" width={55.38} height={30} />
           <Image src="/images/cashew.png" width={55.38} height={30} />
         </div>
-        <p>© 2013-2022 Active fitness store LLC.</p>
+        <p className="mobile-c">© 2013-2022 Active fitness store LLC.</p>
       </div>
     </div>
   );
