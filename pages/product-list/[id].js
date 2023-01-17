@@ -124,14 +124,14 @@ function List(props) {
 }
 List.getInitialProps = async (ctx) => {
   const datafor = {
-    country_id: 1,
-    language_id: 1,
+    country_id: "1",
+    language_id: "1",
     channel: "desktop",
+    type: "category",
     slug: ctx.query.id,
-    type: "subcategoriy/brands/product/dynamic",
     pagination: 1,
     sorting: "recommended",
-    rating: "5 Star",
+    rating: null,
     tags: [],
     filters: {
       brands: null,
