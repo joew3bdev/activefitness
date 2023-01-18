@@ -2,10 +2,15 @@ import ProductList from "../components/product-list/ProductList";
 import { callApi } from "./helpers";
 
 export const pageApi = async (urlData) => {
-  if (urlData.type == "category") {
+  console.log(urlData);
+  if (
+    urlData.type == "category" ||
+    urlData.type == "brand" ||
+    urlData.type == "sub_category"
+  ) {
     const datafor = {
-      country_id: "1",
-      language_id: "1",
+      country_id: urlData.country_id,
+      language_id: urlData.language_id,
       channel: "desktop",
       type: urlData.type,
       slug: urlData.slug,
