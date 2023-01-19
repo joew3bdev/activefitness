@@ -28,6 +28,8 @@
 }
 .product-listing-wrapper.type3 .product-card h4 {
   font-size: 16px;
+  font-family: "Manrope";
+  font-style: normal;
 }
 .product-listing-wrapper.type3 .product-card .info .about ul {
   padding-left: 13px;
@@ -48,8 +50,26 @@
   max-width: 20%;
 }
 .product-listing-wrapper.type3 .delivery {
-  margin-top: 51px;
-  margin-bottom: 30px;
+  margin-top: 31px;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+.product-listing-wrapper.type3 .delivery div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.product-listing-wrapper.type3 .delivery .delivery-detail {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  margin-left: 5px;
+  margin-top: 10px;
 }
 .product-filter {
   width: 19%;
@@ -184,12 +204,22 @@
   display: flex;
   align-items: center;
 }
+
+.product-card .rate .ant-rate-star-second svg {
+  width: 16px;
+  height: 16px;
+}
+
 .product-card .rate label {
-  font-weight: 500;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
   font-size: 12px;
-  line-height: 31px;
-  color: #116da2;
-  margin-left: 5px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
 }
 .product-card .delivery {
   margin-top: -20px;

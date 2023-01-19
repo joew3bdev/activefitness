@@ -1,7 +1,7 @@
 import { Button, Rate } from "antd";
 import TruckIcon from "../library/icons/TruckIcon";
 import Link from "next/link";
-function ProductCard({ item }, gridType, save) {
+function ProductCard({ item, gridType, save }) {
   return (
     <Link href={`/${item.product_slug}`}>
       <div className="product-card">
@@ -11,8 +11,8 @@ function ProductCard({ item }, gridType, save) {
             <div className="sec">
               <h4>{item.product_name}</h4>
               <div className="rate">
-                <Rate allowHalf defaultValue={2.5} />
-                <label>246 reviews</label>
+                <Rate allowHalf defaultValue={2.5} className="start-rate" />
+                <label>{item.reviews.reviews}</label>
               </div>
               <h3>About this item</h3>
               <div
@@ -32,10 +32,16 @@ function ProductCard({ item }, gridType, save) {
                 <span>{item.discount.discount_text}</span>
               </div>
               <div className="delivery">
-                <span>
-                  <TruckIcon />
-                </span>
-                <label>Express</label>
+                <div>
+                  <span>
+                    <TruckIcon />
+                  </span>
+                  <label>Express</label>
+                </div>
+                <p className="delivery-detail">
+                  Free delivery within 1st -3rd October and installation
+                  avaialable
+                </p>
               </div>
               <Button type="primary" className="full-size">
                 ADD TO CART

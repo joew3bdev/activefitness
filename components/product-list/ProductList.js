@@ -222,7 +222,14 @@ function ProductList(props) {
             </span>
           </div>
         </div>
-        <div className="product-card-wrapper">
+        <div
+          className="product-card-wrapper"
+          style={
+            lisitng.total_count < 3
+              ? { justifyContent: "space-around" }
+              : { justifyContent: "space-between" }
+          }
+        >
           {lisitng.listdata?.map((item, key) => {
             const save =
               ((item.regular_price - item.sale_price) / item.regular_price) *
