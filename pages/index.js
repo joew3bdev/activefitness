@@ -6,7 +6,8 @@ import { Button, Col } from "antd";
 import { Row } from "antd";
 import UserStar from "../components/library/icons/Star";
 import Image from "next/image";
-export default function Home() {
+import { callApi } from "../helpers/helpers";
+function Home(props) {
   const indexJson = {
     components: [
       {
@@ -616,82 +617,92 @@ export default function Home() {
   };
 
   const renderComp = (data) => {
+    debugger;
     const structrue = (content) => {
       return (
         <>
-          <Col span={24}>
+          {/* <Col span={24}>
             {data.title && <h1 className="main-title">{data.title}</h1>}
-          </Col>
+          </Col> */}
           {content}
         </>
       );
     };
-    if (data.type == "offer-banner") {
+    if (data.type == "offer_banner") {
+      debugger;
       return structrue(
-        <Col>
-          {data.content.map((item) => {
-            return (
-              <div
-                className="offer-banner"
-                style={{ backgroundColor: item["bg-color"] }}
+        <div
+          className="offer-banner"
+          style={{ backgroundColor: data["bg-color"] }}
+        >
+          <div className={`content ${data.offer_banner_type}`}>
+            {data["small_title"] && (
+              <span className="small">{data["small_title"]}</span>
+            )}
+            {data["title"] && <h1>{data["title"]}</h1>}
+            {data["sub_title"] && <label>{data["sub_title"]}</label>}
+            {data["cta_text"] && (
+              <Button
+                type="primary"
+                className="white"
+                style={{
+                  backgroundColor: data.cta_bg_color,
+                  borderColor: data.cta_bg_color,
+                  color: data.cta_text_color,
+                }}
               >
-                {item["title"] && (
-                  <div className="content">
-                    <h1>{item["title"]}</h1>{" "}
-                  </div>
-                )}
-                {item["cta-text"] && (
-                  <Button type="primary" className="white">
-                    {item["cta-text"]}
-                  </Button>
-                )}
+                {data.cta_text}
+              </Button>
+            )}
+          </div>
 
-                {item.image && <img src={item.image} />}
-              </div>
-            );
-          })}
-        </Col>
+          {data.image && <img src={data.image} />}
+        </div>
       );
     } else if (data.type == "carousel") {
       return structrue(
-        <Col>
-          <Carousel
-            slidesToShow={data.content[0].grid}
-            slidesToScroll={data.content[0].grid}
-          >
-            {data.content[0].carousels.map((item) => {
-              return (
-                <div className="carousel">
-                  <div className="content">
-                    {item.title && (
-                      <h1 style={{ color: item["title-color"] }}>
-                        {item.title}
-                      </h1>
-                    )}
-                    {item["sub-title"] && (
-                      <h4 style={{ color: item["sub-title-color"] }}>
-                        {item["sub-title"]}
-                      </h4>
-                    )}
-                    {item["cta-text"] && (
-                      <Button
-                        type="primary"
-                        style={{
-                          color: item["cta-text-color"],
-                          background: item["cta-bg-color"],
-                          borderColor: item["cta-bg-color"],
-                        }}
-                      >
-                        {item["cta-text"]}
-                      </Button>
-                    )}
+        <>
+          <Col span={data.carousel_grid * 2}>
+            <Carousel slidesToShow={data.items_to_show ?? 1}>
+              {data.items.map((item) => {
+                return (
+                  <div className="carousel">
+                    <div className="content">
+                      {item.title && (
+                        <h1 style={{ color: item.title_color }}>
+                          {item.title}
+                        </h1>
+                      )}
+                      {item.sub_title && (
+                        <h4 style={{ color: item.sub_title_color }}>
+                          {item.sub_title}
+                        </h4>
+                      )}
+                      {item.cta_text && (
+                        <Button
+                          type="primary"
+                          style={{
+                            color: item.cta_text_color,
+                            background: item.cta_bg_color,
+                            borderColor: item.cta_bg_color,
+                          }}
+                        >
+                          {item.cta_text}
+                        </Button>
+                      )}
+                    </div>
+                    <img src={item.slide_image} />
                   </div>
-                  <img src={item["slide-image"]} />
-                </div>
-              );
-            })}
-          </Carousel>
-        </Col>
+                );
+              })}
+            </Carousel>
+          </Col>
+          {data.support_image && (
+            <Col span={data.support_image_grid * 2}>
+              <img src={data.image_url} />
+            </Col>
+          )}
+        </>
       );
     } else if (data.type == "category-group") {
       return structrue(
@@ -737,7 +748,7 @@ export default function Home() {
       );
     } else if (data.type == "static-images") {
       return structrue(
-        data.content.map((item) => {
+        data?.content?.map((item) => {
           return (
             <Col span={item.grid * 2}>
               <img src={item.image} />
@@ -748,7 +759,7 @@ export default function Home() {
     } else if (data.type == "testimonial") {
       return structrue(
         <Carousel slidesToShow={1} slidesToScroll={1}>
-          {data.content.map((item) => {
+          {data?.content?.map((item) => {
             return (
               <div className="testimonial">
                 <p className="message">{item.message}</p>
@@ -823,50 +834,25 @@ export default function Home() {
   return (
     <Layout>
       <SeoHead />
-      <br />
-      {indexJson.components.map((item, key) => {
-        return <Row gutter={[30, 0]}>{renderComp(item)}</Row>;
+      {props.data.layout.components.map((item, key) => {
+        return <Row className="componets-home">{renderComp(item)}</Row>;
       })}
-      {/* <Carousel slidesToShow={5} slidesToScroll={5}>
-        <div>
-          <img src="https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-brands-concept2-web-eng-sep22.jpg" />
-          <spna> AJit</spna>
-        </div>
-        <div>
-          <img src="https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-brands-lifefitness-web-eng-sep22.jpg" />
-        </div>
-        <div>
-          <img src="https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-brands-nordictrack-web-eng-sep22.jpg" />
-        </div>
-        <div>
-          <img src="https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-brands-assault-fitness-web-eng-sep22.jpg" />
-        </div>
-        <div>
-          <img src="https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-brands-concept2-web-eng-sep22.jpg" />
-        </div>
-        <div>
-          <img src="https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-brands-concept2-web-eng-sep22.jpg" />
-        </div>
-        <div>
-          <img src="https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-brands-concept2-web-eng-sep22.jpg" />
-        </div>
-      </Carousel>
-      <br />
-      <Carousel slidesToShow={1} slidesToScroll={1}>
-        <div>
-          <img src="https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/afs-nordictrack-rw900-july22-mweb-eng.jpg" />
-        </div>
-        <div>
-          <img src="https://res.cloudinary.com/afs-assets/image/upload/q_auto,f_auto/v22122019/blocks/nordictrack-x32i-oct22-web-eng.jpg" />
-        </div>
-      </Carousel>
-      <br />
-      <Button type="primary">Primary Button</Button>
-      <Button>Default Button</Button>
-      <br />
-      <TabCarousel position="top" />
-      <br />
-      <TabCarousel position="left" /> */}
     </Layout>
   );
 }
+Home.getInitialProps = async (ctx) => {
+  const datafor = {
+    page_slug: "about-us",
+    channel: "desktop",
+    type: "page",
+    language_id: 1,
+    country_id: 1,
+  };
+  const res = await callApi({
+    URL: "http://reactapi.activefitnessstore.com/api/get-dynamic-page-body",
+    TYPE: "POST",
+    DATA: datafor,
+  });
+  return { data: res?.data };
+};
+export default Home;

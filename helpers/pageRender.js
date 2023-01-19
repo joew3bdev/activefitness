@@ -1,4 +1,6 @@
 import ProductList from "../components/product-list/ProductList";
+import Product from "../components/product/Product";
+import { translate } from "../public/locale";
 import { callApi } from "./helpers";
 
 export const pageApi = async (urlData) => {
@@ -35,12 +37,27 @@ export const pageApi = async (urlData) => {
     });
     console.log(res);
     return { lisitng: res?.data, filterval: datafor, pageType: "lisitng" };
+  } else if (urlData.type == "product" || urlData.type == "product_detail") {
+    const datafor = {
+      product_slug: urlData.slug,
+      country_id: urlData.country_id,
+      language_id: urlData.language_id,
+      channel: "desktop",
+    };
+    const res = await callApi({
+      URL: "http://reactapi.activefitnessstore.com/api/product/detail",
+      TYPE: "POST",
+      DATA: datafor,
+    });
+    return { lisitng: res?.data, pageType: "product" };
   }
 };
 
 export const pageRender = (props) => {
   debugger;
   if (props.pageType == "lisitng") {
-    return <ProductList {...props} />;
+    return <ProductList {...props} translate={translate} />;
+  } else if (props.pageType == "product") {
+    return <Product {...props} translate={translate} />;
   }
 };

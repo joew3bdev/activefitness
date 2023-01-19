@@ -1,7 +1,4 @@
-import SeoHead from "../../components/common/Head";
-import Layout from "../../components/common/Layout";
 import { useRef, useState } from "react";
-import { callApi } from "../../helpers/helpers";
 import Carousel from "../../components/common/Carousel";
 import { Button, Tabs } from "antd";
 import UserStar from "../../components/library/icons/Star";
@@ -66,13 +63,13 @@ function Product(props) {
       ),
     },
   ];
+  debugger;
   return (
-    <Layout>
-      <SeoHead />
+    <>
       <div className="product-wrapper">
         <div className="image-section">
           <div className="image-display">
-            {productDetails?.pricing[0]?.images?.map((item, key) => {
+            {productDetails?.pricing?.[0]?.images?.map((item, key) => {
               // Todo: pricing array
               return (
                 <div onClick={() => sliderRef?.slickGoTo(key)} key={key}>
@@ -92,15 +89,23 @@ function Product(props) {
         <div className="details-section">
           <p className="title">{productDetails?.product_name}</p>
           <span className="star-wrap">
-            {/* {Array(Math.round(Number(productDetails?.pricing[0]["item_rating"]))).fill(<UserStar />)}  // change item rating to nummber */}
+            {/* {Array(Math.round(Number(productDetails?.pricing?.[0]["item_rating"]))).fill(<UserStar />)}  // change item rating to nummber */}
             {Array(4).fill(<UserStar />)}
             <h5>246</h5>
           </span>
           <div className="price-wrap">
             <div className="price">
-              <p className="org">AED 987</p>
-              <p className="disc">AED 75</p>
-              <p className="saves">Save 30%</p>
+              <p className="org">
+                {productDetails?.currency}{" "}
+                {productDetails?.pricing?.[0].sale_price}
+              </p>
+              <p className="disc">
+                {productDetails?.currency}{" "}
+                {productDetails?.pricing?.[0].regular_price}
+              </p>
+              <p className="saves">
+                {productDetails?.pricing?.[0].discount_percent_text}
+              </p>
             </div>
             {mobile ? (
               <span>
@@ -116,7 +121,8 @@ function Product(props) {
               <LabelIcon />{" "}
               <span className="offer-text">
                 <p>
-                  3 interest-free payments of AED 406.00 with <img src={""} />
+                  3 interest-free payments of {productDetails?.currency} 406.00
+                  with <img src={""} />
                   <a> learn more</a>
                 </p>
               </span>
@@ -124,11 +130,15 @@ function Product(props) {
             <div className="express">
               <div className="bus">
                 <Image src="/images/truck.png" width={21} height={14} />
-                <strong className="bus-title">Express</strong>
+                <strong className="bus-title">
+                  {productDetails?.pricing?.[0]?.delivery?.delivery_type}
+                </strong>
               </div>
-              <p>Order now to get on 3rd October</p>
+              <p>{productDetails?.pricing?.[0]?.delivery?.text}</p>
             </div>
-            <p className="stock-num">Hurry up! Only 2 left in stock</p>
+            <p className="stock-num">
+              Hurry up! Only {productDetails?.pricing?.[0].stock} left in stock
+            </p>
           </div>
           <div className="buy-wrap">
             <Button type="primary" className="full-size">
@@ -178,19 +188,23 @@ function Product(props) {
           </div>
           <div className="brands-wrap">
             <div className="brands">
-              <Image src="/images/Pro-form.png" width={100} height={60} />
+              <img
+                src={productDetails?.brand?.brand_image}
+                width={100}
+                height={60}
+              />
               <div className="brand-item-wrap">
                 <div className="brand-item">
                   <p className="item">Brand</p>
-                  <p className="title">Pro-Form</p>
+                  <p className="title">{productDetails?.brand?.brand_name}</p>
                 </div>
                 <div className="brand-item">
                   <p className="item">Origin</p>
-                  <p className="title">USA</p>
+                  <p className="title">{productDetails?.brand?.brand_origin}</p>
                 </div>
               </div>
             </div>
-            <a>visit Store</a>
+            <a href={`/${productDetails?.brand?.brand_url}`}>visit Store</a>
           </div>
           <div className="request-buttons">
             <Button type="primary" className="req-btn full-size">
@@ -205,21 +219,7 @@ function Product(props) {
       <div className="spec-container">
         <Tabs defaultActiveKey="1" onChange={onChange} items={tab_items} />
       </div>
-    </Layout>
+    </>
   );
 }
-Product.getInitialProps = async (ctx) => {
-  const datafor = {
-    product_slug: ctx.query.id,
-    country_id: 1,
-    language_id: 1,
-    channel: "desktop",
-  };
-  const res = await callApi({
-    URL: "http://reactapi.activefitnessstore.com/api/product/detail",
-    TYPE: "POST",
-    DATA: datafor,
-  });
-  return { lisitng: res?.data };
-};
 export default Product;

@@ -225,6 +225,7 @@ a {
 }
 .slick-slide img {
   max-width: 100%;
+  width: 100%;
 }
 /* carousel ends */
 body .top-tab-carousel .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab,

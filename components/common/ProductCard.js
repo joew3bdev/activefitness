@@ -3,7 +3,7 @@ import TruckIcon from "../library/icons/TruckIcon";
 import Link from "next/link";
 function ProductCard({ item }, gridType, save) {
   return (
-    <Link href={`/product/${item._id}`}>
+    <Link href={`/${item.product_slug}`}>
       <div className="product-card">
         <img src={item.image} />
         {gridType === 3 ? (

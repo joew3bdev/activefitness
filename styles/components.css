@@ -1,3 +1,9 @@
+.componets-home img {
+  width: 100%;
+}
+.componets-home {
+  overflow: hidden;
+}
 .main-title {
   font-family: "Barlow Condensed";
   font-size: 40px;
@@ -13,17 +19,46 @@
   justify-content: space-around;
   align-items: center;
   margin: 30px 0;
+  width: 100%;
+}
+.offer-banner img {
+  width: 100%;
 }
 .offer-banner .content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   text-transform: uppercase;
+  position: absolute;
+  align-items: center;
+}
+.offer-banner .content.with_cta {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
 }
 .offer-banner .content h1 {
   font-family: "Barlow Condensed";
   font-size: 30px;
   font-style: italic;
   font-weight: 700;
+  line-height: 36px;
+  color: #fff;
+  margin: 0;
+}
+.offer-banner .content span.small {
+  font-family: "Barlow Condensed";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 36px;
+  color: #fff;
+}
+.offer-banner .content.with_cta span.small {
+  display: none;
+}
+.offer-banner .content label {
+  font-family: "Manrope";
+  font-size: 16px;
+  font-weight: 300;
   line-height: 36px;
   color: #fff;
 }
