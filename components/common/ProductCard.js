@@ -1,7 +1,11 @@
 import { Button, Rate } from "antd";
 import TruckIcon from "../library/icons/TruckIcon";
 import Link from "next/link";
+import useViewport from "../../helpers/useViewport";
 function ProductCard({ item, gridType, save }) {
+  const { width } = useViewport();
+  const mobile = width < 481;
+
   return (
     <Link href={`/${item.product_slug}`}>
       <div className="product-card">
@@ -60,14 +64,27 @@ function ProductCard({ item, gridType, save }) {
               <label>{item.delivery.delivery_type}</label>
             </div>
             <h4>{item.product_name}</h4>
-            <div className="pricing">
-              <sup>{item.currency}</sup>
-              <label>{item.sale_price}</label>
-              <del>
-                {item.currency} {item.regular_price}
-              </del>
-              <span>{item.discount.discount_text}</span>
-            </div>
+            {mobile ? (
+              <div className="pricing">
+                <div>
+                  <sup>{item.currency}</sup>
+                  <label>{item.sale_price}</label>
+                  <del>
+                    {item.currency} {item.regular_price}
+                  </del>
+                </div>
+                <span>{item.discount.discount_text}</span>
+              </div>
+            ) : (
+              <div className="pricing">
+                <sup>{item.currency}</sup>
+                <label>{item.sale_price}</label>
+                <del>
+                  {item.currency} {item.regular_price}
+                </del>
+                <span>{item.discount.discount_text}</span>
+              </div>
+            )}
             <div className="rate">
               <Rate allowHalf defaultValue={2.5} />
               <label>246 reviews</label>

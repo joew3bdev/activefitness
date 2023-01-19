@@ -4,7 +4,10 @@ import { callApi } from "../../helpers/helpers";
 import ProductCard from "../../components/common/ProductCard";
 import { cloneDeep } from "lodash";
 import PopupModal from "../../components/common/PopupModal";
+import FilterModal from "../../components/common/FilterModal";
 import { DownOutlined } from "@ant-design/icons";
+import SortIcon from "../library/icons/Sort";
+import FilterIcon from "../library/icons/FilterIcon";
 const { Panel } = Collapse;
 function ProductList(props) {
   const [gridType, setgridType] = useState(1);
@@ -14,6 +17,11 @@ function ProductList(props) {
   const [modalTitle, setModalTitle] = useState("");
   const [options, setOptions] = useState("");
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [openFilterModal, setOpenFilterModal] = useState(false);
+
+  const showFilter = () => {
+    setOpenFilterModal(true);
+  };
 
   const showDrawer = () => {
     setOpenDrawer(true);
@@ -244,7 +252,20 @@ function ProductList(props) {
             );
           })}
         </div>
+        <div className="filter-wrapper">
+          <div>
+            <SortIcon /> <span>Sort</span>
+          </div>
+          <div onClick={() => showFilter()}>
+            <FilterIcon /> <span>Filter</span>
+          </div>
+        </div>
       </div>
+      <FilterModal
+        isModalOpen={openFilterModal}
+        handleCancel={() => setOpenFilterModal(false)}
+        lisitng={lisitng}
+      />
     </div>
   );
 }
