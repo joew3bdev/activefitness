@@ -9,6 +9,7 @@ function ProductCard({ item, gridType, save }) {
   return (
     <Link href={`/${item.product_slug}`}>
       <div className="product-card">
+      <span class="ribbon">RIBBON</span>
         <img src={item.image} />
         {gridType === 3 ? (
           <div className="info">
